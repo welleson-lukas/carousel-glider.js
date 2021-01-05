@@ -1,0 +1,141 @@
+
+    <link href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" rel="stylesheet">
+
+    <style>
+        .botoes-carrosel {
+            height: 35px;
+            line-height: 3px;
+            width: 35px;
+            font-size: 2em;
+            font-weight: bold;
+            border-radius: 50%;
+            background-color: #337ab7;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            border-color: #2e6da4;
+            margin: 1px 3px 0px 3px;
+        }
+        .botoes-carrosel:hover {
+            background:#30588e;
+        }
+
+        .js-carousel--responsive {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        .botoes {
+            text-align: center;
+            margin-top: -3px;
+        }
+
+
+        .c-carousel__slide {
+            margin: 3px;
+            text-align: center;
+        }
+
+    </style>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-9">
+            <article class="c-carousel c-carousel--simple">
+                <div class="c-carousel__slides js-carousel--responsive">
+                    <article class="c-carousel__slide">
+                        <img class="d-block w-100" src="http://placehold.it/500/CCCCCC/fff&text=1" alt="Third slide">
+                    </article>
+
+                    <article class="c-carousel__slide">
+                        <a href=""><img class="d-block w-100" src="http://placehold.it/500/CCCCCC/fff&text=2" alt="Third slide"></a>
+                        <p>vereador fulano</p>
+                    </article>
+                    <article class="c-carousel__slide">
+                        <img class="d-block w-100" src="http://placehold.it/500/CCCCCC/fff&text=3" alt="Third slide">
+                    </article>
+                    <article class="c-carousel__slide">
+                        <img class="d-block w-100" src="http://placehold.it/500/CCCCCC/fff&text=4" alt="Third slide">
+                    </article>
+                    <article class="c-carousel__slide">
+                        <img class="d-block w-100" src="http://placehold.it/500/CCCCCC/fff&text=5" alt="Third slide">
+                    </article>
+                    <article class="c-carousel__slide">
+                        <img class="d-block w-100" src="http://placehold.it/500/CCCCCC/fff&text=6" alt="Third slide">
+                    </article>
+
+                    <article class="c-carousel__slide">
+                        <img class="d-block w-100" src="http://placehold.it/500/CCCCCC/fff&text=7" alt="Third slide">
+                    </article>
+
+                    <article class="c-carousel__slide">
+                        <img class="d-block w-100" src="http://placehold.it/500/CCCCCC/fff&text=8" alt="Third slide">
+                    </article>
+
+                    <article class="c-carousel__slide">
+                        <img class="d-block w-100" src="http://placehold.it/500/CCCCCC/fff&text=9" alt="Third slide">
+                    </article>
+                </div>
+
+                <!--<div class="js-carousel--responsive-dots"></div>-->
+                <div class="botoes">
+                    <button class="js-carousel--responsive-prev botoes-carrosel"><i class="fas fa-angle-left"></i></button>
+                    <button id="btn-next" class="js-carousel--responsive-next botoes-carrosel"><i class="fas fa-angle-right"></i></button>
+                </div>
+
+            </article>
+        </div>
+
+        <div class="col-sm-3">
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-a11y="true"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+<script>
+
+    const $responsiveCarousel = document.querySelector(".js-carousel--responsive");
+
+    new Glider($responsiveCarousel, {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        draggable: false,
+        duration: 2.0,
+        rewind: true,
+        dots: ".js-carousel--responsive-dots",
+        arrows: {
+            prev: ".js-carousel--responsive-prev",
+            next: ".js-carousel--responsive-next",
+        },
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    duration: 2.0,
+                    draggable: false,
+                    rewind: true,
+                },
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    duration: 2.0,
+                    draggable: false,
+                    rewind: true,
+                    scrollBar: false,
+                },
+            },
+        ],
+    });
+
+    setInterval( function(){ document.querySelector('#btn-next').click();}, 3000);
+</script>
+
+
